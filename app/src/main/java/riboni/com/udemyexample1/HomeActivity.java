@@ -1,15 +1,19 @@
 package riboni.com.udemyexample1;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatCallback;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.ParseUser;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,32 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(takeLogin);
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        AppCompatCallback callback = new AppCompatCallback() {
+            @Override
+            public void onSupportActionModeStarted(ActionMode mode) {
+
+            }
+
+            @Override
+            public void onSupportActionModeFinished(ActionMode mode) {
+
+            }
+
+            @Nullable
+            @Override
+            public ActionMode onWindowStartingSupportActionMode(ActionMode.Callback callback) {
+                return null;
+            }
+        };
+
+        AppCompatDelegate delegate = AppCompatDelegate.create(this,callback);
+
+        delegate.onCreate(savedInstanceState);
+        delegate.setContentView(R.layout.activity_home);
+
+        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
+        delegate.setSupportActionBar(toolbar);
+
 
     }
 
