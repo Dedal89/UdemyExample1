@@ -6,6 +6,7 @@
     <string name="loginUsername">Username</string>
     <string name="loginPassword">Password</string>
     <string name="loginButton">Login</string>
+    <string name="logoutBtn">Logout</string>
     <string name="registerEmail">Email</string>
     <string name="orString">or</string>
     <string name="registerPassword">Password</string>
@@ -15,4 +16,6 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="welcomeMessage">Welcome</string>
+    <string name="updateStatus">Update</string>
+    <string name="title_activity_update_status">UpdateStatusActivity</string>
 </resources>
