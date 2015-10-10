@@ -30,10 +30,17 @@ public class RegisterActivity extends AppCompatActivity {
         mUserPassword = (EditText) findViewById(R.id.registerPasswordEditText);
         mSignUpUser = (Button) findViewById(R.id.signUpButton);
 
+        mSignUpUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _doSignUp();
+            }
+        });
+
     }
 
     /** Called when the user clicks the SignUp button */
-    public void signUp(View view){
+    private void _doSignUp(){
         ParseUser user = new ParseUser();
         user.setUsername(mUsername.getText().toString().trim());
         user.setEmail(mUserEmail.getText().toString().trim());
@@ -45,8 +52,8 @@ public class RegisterActivity extends AppCompatActivity {
                 if (e == null) {
                     Toast.makeText(RegisterActivity.this, "Registration Success!", Toast.LENGTH_LONG).show();
 
-                    Intent takeToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(takeToLogin);
+                    Intent takeHome = new Intent(RegisterActivity.this, HomeActivity.class);
+                    startActivity(takeHome);
                 } else {
                     Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
