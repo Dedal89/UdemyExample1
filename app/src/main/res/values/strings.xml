@@ -3,7 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginPassword">Password</string>
+    <string name="loginButton">Login</string>
     <string name="registerEmail">Email</string>
+    <string name="orString">or</string>
     <string name="registerPassword">Password</string>
     <string name="registerUsername">Username</string>
     <string name="signUp">Sign Up</string>
