@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -23,8 +22,6 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        Parse.initialize(this, "yDtXoC5vV5UQ29DUXMkzb66WeI3QltDQZLMxCMUC", "oApQ0fw7aVUoMBL0I5mVZumrHBXfTfATtiDO5q63");
 
         // initialize
         mUsername = (EditText) findViewById(R.id.registerUsernameEditText);

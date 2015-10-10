@@ -1,7 +1,9 @@
 package riboni.com.udemyexample1;
 
+import android.app.Application;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.test.ApplicationTestCase;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,5 +35,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
+     */
+    public static class ApplicationTest extends ApplicationTestCase<Application> {
+        public ApplicationTest() {
+            super(Application.class);
+        }
     }
 }
