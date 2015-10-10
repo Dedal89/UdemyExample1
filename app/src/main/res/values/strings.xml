@@ -7,4 +7,7 @@
     <string name="registerPassword">Password</string>
     <string name="registerUsername">Username</string>
     <string name="signUp">Sign Up</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_xxx">XXXActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>

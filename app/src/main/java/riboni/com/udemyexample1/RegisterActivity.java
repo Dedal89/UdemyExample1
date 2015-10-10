@@ -1,7 +1,8 @@
 package riboni.com.udemyexample1;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends AppCompatActivity {
 
     protected EditText mUsername;
     protected EditText mUserEmail;
@@ -44,10 +45,10 @@ public class RegisterActivity extends Activity {
                 if (e == null) {
                     Toast.makeText(RegisterActivity.this, "Registration Success!", Toast.LENGTH_LONG).show();
 
-                    //redirect to login page
-                    //TODO
+                    Intent takeToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(takeToLogin);
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Registration Success!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });
