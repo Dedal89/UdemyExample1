@@ -13,11 +13,13 @@
     <string name="registerPassword">Password</string>
     <string name="registerUsername">Username</string>
     <string name="signUp">Sign Up</string>
+    <string name="statusHPText">status</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="welcomeMessage">Welcome</string>
     <string name="updateStatus">Update</string>
     <string name="updateStatusBtn">Update!</string>
+    <string name="usernameHPText">username</string>
     <string name="title_activity_update_status">UpdateStatusActivity</string>
 </resources>
