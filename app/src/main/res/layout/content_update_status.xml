@@ -8,6 +8,19 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_update_status"
-    tools:context="riboni.com.udemyexample1.UpdateStatusActivity">
+    tools:context="riboni.com.udemyexample1.UpdateStatusActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/updateMyStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="@string/myStatusText"/>
+
+    <Button
+        android:id="@+id/updateStatusBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/updateStatusBtn"/>
 
 </LinearLayout>
