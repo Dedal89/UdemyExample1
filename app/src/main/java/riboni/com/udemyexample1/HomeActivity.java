@@ -10,10 +10,19 @@ import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.List;
+
 public class HomeActivity extends ListActivity {
+
+    protected List<ParseObject> mStatusList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,25 @@ public class HomeActivity extends ListActivity {
             Intent takeLogin = new Intent(this, LoginActivity.class);
             startActivity(takeLogin);
         }
+
+        ParseQuery<ParseObject> query = new ParseQuery<>("Status");
+        query.orderByDescending("createdAt");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> statusList, ParseException e) {
+                if (e == null) {
+
+                    // success
+                    mStatusList = statusList;
+                    StatusAdapter adapter = new StatusAdapter(getListView().getContext(),mStatusList);
+                    setListAdapter(adapter);
+                } else {
+
+                    // error
+                    Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         AppCompatCallback callback = new AppCompatCallback() {
             @Override
